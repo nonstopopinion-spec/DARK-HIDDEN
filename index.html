@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TEAM DARK | Cyber Division</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #020504;
+    color: #fff;
+    font-family: 'Courier New', monospace;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+}
+
+canvas {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(
+        circle at center,
+        transparent,
+        #000 90%
+    );
+    z-index: -1;
+}
+
+.container {
+    width: 92%;
+    max-width: 650px;
+    margin: 35px auto;
+    padding: 35px 25px;
+    background: rgba(3, 15, 10, 0.88);
+    border: 1px solid rgba(0,255,100,0.25);
+    border-radius: 15px;
+    text-align: center;
+    box-shadow:
+        0 0 35px rgba(0,255,80,0.08),
+        inset 0 0 25px rgba(0,255,80,0.03);
+    backdrop-filter: blur(12px);
+}
+
+/* HACKER EYES */
+
+.eyes {
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+    margin: 10px 0 25px;
+}
+
+.eye {
+    width: 65px;
+    height: 38px;
+    background: #001c0a;
+    border: 2px solid #00ff66;
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 0 15px #00ff66;
+    transform: rotate(-5deg);
+}
+
+.eye:nth-child(2) {
+    transform: rotate(5deg);
+}
+
+.eye::after {
+    content: "";
+    width: 13px;
+    height: 13px;
+    background: #00ff66;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    left: 24px;
+    box-shadow: 0 0 15px #00ff66;
+    animation: look 3s infinite alternate;
+}
+
+@keyframes look {
+    from { transform: translateX(-10px); }
+    to { transform: translateX(10px); }
+}
+
+h1 {
+    font-size: clamp(30px, 7vw, 48px);
+    letter-spacing: 7px;
+    color: #00ff66;
+    text-shadow: 0 0 18px #00ff66;
+}
+
+.subtitle {
+    color: #8affb5;
+    font-size: 11px;
+    letter-spacing: 4px;
+    margin-top: 12px;
+}
+
+.line {
+    height: 1px;
+    width: 85%;
+    margin: 28px auto;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #00ff66,
+        transparent
+    );
+    box-shadow: 0 0 12px #00ff66;
+}
+
+.description {
+    color: #b5c9bc;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.tag {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 9px 18px;
+    border: 1px solid #00ff66;
+    color: #00ff66;
+    border-radius: 4px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    box-shadow: 0 0 12px rgba(0,255,100,0.12);
+}
+
+.info {
+    margin-top: 30px;
+    padding: 20px;
+    text-align: left;
+    background: rgba(0,255,100,0.035);
+    border: 1px solid rgba(0,255,100,0.2);
+    border-radius: 9px;
+}
+
+.info p {
+    padding: 12px 5px;
+    border-bottom: 1px solid rgba(0,255,100,0.1);
+    color: #b8cfc0;
+    font-size: 13px;
+}
+
+.info p:last-child {
+    border: none;
+}
+
+.info span {
+    color: #00ff66;
+    letter-spacing: 1px;
+}
+
+.status {
+    margin-top: 27px;
+    color: #00ff66;
+    font-size: 12px;
+    letter-spacing: 3px;
+    animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0.35; }
+}
+
+.footer {
+    margin-top: 30px;
+    color: #577462;
+    font-size: 10px;
+    letter-spacing: 2px;
+    line-height: 2;
+}
+
+</style>
+</head>
+
+<body>
+
+<canvas id="matrix"></canvas>
+
+<div class="container">
+
+    <div class="eyes">
+        <div class="eye"></div>
+        <div class="eye"></div>
+    </div>
+
+    <h1>TEAM DARK</h1>
+
+    <div class="subtitle">
+        WELCOME TO TEAM DARK
+    </div>
+
+    <div class="line"></div>
+
+    <p class="description">
+        We comply with Telegram policies
+        and work for the welfare of Telegram users.
+        <br><br>
+        CYBER • TECHNOLOGY • SECURITY
+    </p>
+
+    <div class="tag">
+        ◈ OFFICIAL CYBER COMMUNITY ◈
+    </div>
+
+    <div class="info">
+
+        <p><span>⌖ TARGET</span> : HIDDEN</p>
+
+        <p><span>⌖ AIM</span> : HIDDEN</p>
+
+        <p><span>⌖ DIVISION</span> : TEAM DARK</p>
+
+        <p><span>⌖ STATUS</span> : ACTIVE</p>
+
+        <p><span>⌖ SECURITY</span> : ENABLED</p>
+
+    </div>
+
+    <div class="status">
+        ● SYSTEM ONLINE
+    </div>
+
+    <div class="footer">
+        SILENT MINDS • DARK VISION
+        <br>
+        © 2026 TEAM DARK
+    </div>
+
+</div>
+
+<script>
+
+const canvas = document.getElementById("matrix");
+const ctx = canvas.getContext("2d");
+
+let fontSize = 14;
+let columns;
+let drops;
+
+function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    columns = Math.floor(canvas.width / fontSize);
+    drops = Array(columns).fill(1);
+}
+
+resize();
+
+window.addEventListener("resize", resize);
+
+const chars = "01ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+function drawMatrix() {
+
+    ctx.fillStyle = "rgba(0,0,0,0.07)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.font = fontSize + "px monospace";
+
+    for (let i = 0; i < drops.length; i++) {
+
+        const char = chars[
+            Math.floor(Math.random() * chars.length)
+        ];
+
+        ctx.fillStyle = "#00ff66";
+
+        ctx.shadowBlur = 10;
+        ctx.shadowColor = "#00ff66";
+
+        ctx.fillText(
+            char,
+            i * fontSize,
+            drops[i] * fontSize
+        );
+
+        if (
+            drops[i] * fontSize > canvas.height &&
+            Math.random() > 0.975
+        ) {
+            drops[i] = 0;
+        }
+
+        drops[i]++;
+    }
+
+    ctx.shadowBlur = 0;
+}
+
+setInterval(drawMatrix, 45);
+
+</script>
+
+</body>
+</html>
